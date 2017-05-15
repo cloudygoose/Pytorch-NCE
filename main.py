@@ -212,7 +212,7 @@ def train():
 
 
         target = target.masked_select(mask)
-        loss = criterion(
+        loss = nce_criterion(
             output.view(target.size(0), ntokens),
             target,
         )
